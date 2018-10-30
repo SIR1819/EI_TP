@@ -1,0 +1,31 @@
+<!doctype html>
+ <html>
+  <head>
+   <meta charset="utf-8">
+   <title>My home page</title>
+   
+  </head>
+ <body>
+  <h1 id="pagetitle">My home page</h1>
+  <p>Hello, I am Marijn and this is my home page.</p>
+  <p>I also wrote a book! Read it
+     <a href="http://eloquentjavascript.net">here</a>.</p>
+ </body>
+ <script>
+        var pt = document.getElementById("pagetitle");
+        pt.innerHTML = "Nunca mais são 16h00!!!";
+        pt.onclick = verde;
+
+        function amarela() {
+            this.style.backgroundColor = "yellow";
+            this.onclick = verde;
+        }
+        
+        function verde () {
+            this.style.backgroundColor = "green";
+            this.onclick = amarela;
+        }
+
+        console.log(pt);
+     </script>
+</html>

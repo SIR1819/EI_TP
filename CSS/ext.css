@@ -1,0 +1,49 @@
+@media print {
+    * {background-color: white !important; color: black !important};
+}
+
+@media screen and (min-width : 500px) {
+    body {background-color: blue }
+}
+
+@media screen and (max-width : 800px) {
+    body {background-color: chocolate;}
+}
+
+
+h1 {
+    font-size: 100pt;
+}
+
+div p { 
+    color:seagreen;
+}
+
+div > p {
+    color:yellow;
+}
+
+p~p {
+    color: lightblue
+}
+
+p:hover {background-color: lemonchiffon}
+
+div.zebra>div:nth-child(2n) {
+    color:lightgray;
+    background-color: cornflowerblue;
+}
+
+div.zebra>div:nth-child(2n+1) {
+    color:cornflowerblue;
+    background-color: silver;
+}
+div.zebra>div::first-letter {
+    text-transform: capitalize;
+    font-size: larger;
+    color:red;
+}
+
+div.lista>a[href$=pdf]::after {content : "(PDF)"}
+div.lista>a[href$=jpg]::after {content : "(FOTO)"}
+div.lista>a[href$=doc]::after {content : "(MS WORD)"}

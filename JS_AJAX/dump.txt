@@ -1,0 +1,4 @@
+xReq.addEventListener("load", function () {
+                let divc = document.getElementById("content");
+                divc.innerHTML = this.responseText;
+            });

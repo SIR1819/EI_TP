@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="alert.js"></script>
+    <script>
+        var a=1;
+        //debugger;
+
+        for (let i=0; i<3; i++) {
+            a = duplica(a);
+            console.log("o valor de a = ", a);
+            alerta();
+        }
+
+        function duplica(valor) {
+            var a = 1;
+            console.log("a :", a);
+            return valor * 2;
+        }
+        dup = duplica;
+
+        console.log("dup", dup(100));
+
+    </script>
+</head>
+<body>
+    Javascript
+</body>
+</html>
