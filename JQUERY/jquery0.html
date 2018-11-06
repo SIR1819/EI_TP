@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $('li').html('ola');
+        $(document).ready(function () {
+            $('li').html('ola').click(function () {
+                //console.log(this);
+                newE = $(this).clone();
+                $(this).parent().append(newE);
+            });
+
+            $("#bgetusers").click(function () {
+                $.ajax({
+                    url : "https://randomuser.me/api/",
+                    dataType : "json",
+                    method : "get",
+                    success : function (data) {
+                        $("body").append(
+                            $("<h1/>").html(data.results[0].name.first)
+                        );
+                    }
+                })
+            })
+        });
+
+
+
+
+    </script>
+</head>
+<body>
+    <ul>
+        <li>pedro</li>
+        <li>carlos</li>
+        <li>ana</li>
+    </ul>
+    <button id="bgetusers">get users</button>
+</body>
+</html>
