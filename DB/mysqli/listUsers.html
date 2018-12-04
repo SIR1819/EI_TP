@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="control">
+        <button id="bget">Get Users</button>
+    </div>
+    <div id="content">
+
+    </div>
+</body>
+<script>
+    bget = document.getElementById("bget");
+    bget.addEventListener("click", function () {
+        fetch("getusers.php")
+         .then(function (response) {
+             return response.json();
+         })
+         .then(function (userData) {
+             divContent = document.getElementById("content");
+             userData.forEach(element => {
+                 newLI = document.createElement("li");
+                 newLI.innerHTML =        element.username +
+                                    "|" + element.nome +
+                                    "|" + element.apelido;
+                 divContent.appendChild(newLI);
+             });
+         })
+    })
+</script>
+</html>
